@@ -1,0 +1,25 @@
+{
+    "pruebaApp": {
+        "stadistics" : {
+            "home": {
+                "title": "Stadisticss",
+                "createLabel": "Créer un nouveau Stadistics",
+                "createOrEditLabel": "Créer ou éditer un Stadistics"
+            },
+            "created": "Un nouveau Stadistics a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Stadistics avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Stadistics avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Stadistics {{ id }} ?"
+            },
+            "detail": {
+                "title": "Stadistics"
+            },
+            "baskets": "Baskets",
+            "faults": "Faults",
+            "game": "Game",
+            "player": "Player"
+        }
+    }
+}
+

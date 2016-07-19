@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151126210703_added_entity_League.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151126210816_added_entity_Referee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151127110423_added_entity_Stadium.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151127111646_added_entity_Coach.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151127112129_added_entity_Partner.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151129122700_added_entity_Team.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151129122801_added_entity_Player.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151126211428_added_entity_Season.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151126211702_added_entity_Game.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151127112712_added_entity_Stadistics.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

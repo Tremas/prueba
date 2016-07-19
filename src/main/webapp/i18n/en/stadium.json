@@ -1,0 +1,24 @@
+{
+    "pruebaApp": {
+        "stadium" : {
+            "home": {
+                "title": "Stadiums",
+                "createLabel": "Create a new Stadium",
+                "createOrEditLabel": "Create or edit a Stadium"
+            },
+            "created": "A new Stadium is created with identifier {{ param }}",
+            "updated": "A Stadium is updated with identifier {{ param }}",
+            "deleted": "A Stadium is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stadium {{ id }}?"
+            },
+            "detail": {
+                "title": "Stadium"
+            },
+            "name": "Name",
+            "measure": "Measure",
+            "maximumCapacity": "MaximumCapacity",
+            "team": "Team"
+        }
+    }
+}

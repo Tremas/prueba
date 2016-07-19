@@ -1,0 +1,72 @@
+
+<div>
+    <h2><span translate="pruebaApp.team.detail.title">Team</span> {{team.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{team.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.creationDate">CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{team.creationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.locality">Locality</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{team.locality}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.stadium">stadium</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="stadium.detail({id:team.stadium.id})">{{team.stadium.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.coach">coach</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="coach.detail({id:team.coach.id})">{{team.coach.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.team.partner">partner</span>
+                </td>
+                <td>
+                    <span ng-repeat="partner in team.partners">
+                        <a class="form-control-static" ui-sref="partner.detail({id: {{partner.id}}})">{{partner.name}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

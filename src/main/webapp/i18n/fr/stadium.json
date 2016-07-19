@@ -1,0 +1,25 @@
+{
+    "pruebaApp": {
+        "stadium" : {
+            "home": {
+                "title": "Stadiums",
+                "createLabel": "Créer un nouveau Stadium",
+                "createOrEditLabel": "Créer ou éditer un Stadium"
+            },
+            "created": "Un nouveau Stadium a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Stadium avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Stadium avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Stadium {{ id }} ?"
+            },
+            "detail": {
+                "title": "Stadium"
+            },
+            "name": "Name",
+            "measure": "Measure",
+            "maximumCapacity": "MaximumCapacity",
+            "team": "Team"
+        }
+    }
+}
+

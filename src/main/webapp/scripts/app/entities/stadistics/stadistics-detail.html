@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="pruebaApp.stadistics.detail.title">Stadistics</span> {{stadistics.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.stadistics.baskets">Baskets</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stadistics.baskets}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.stadistics.faults">Faults</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{stadistics.faults}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.stadistics.game">game</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="game.detail({id:stadistics.game.id})">{{stadistics.game.date}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pruebaApp.stadistics.player">player</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="player.detail({id:stadistics.player.id})">{{stadistics.player.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

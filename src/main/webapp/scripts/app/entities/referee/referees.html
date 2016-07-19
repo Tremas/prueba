@@ -1,0 +1,57 @@
+<div>
+    <h2 translate="pruebaApp.referee.home.title">Referees</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="referee.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="pruebaApp.referee.home.createLabel">Create a new Referee</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="pruebaApp.referee.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="birthDate"><span translate="pruebaApp.referee.birthDate">BirthDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="league.name"><span translate="pruebaApp.referee.league">league</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="referee in referees track by referee.id">
+                    <td><a ui-sref="referee.detail({id:referee.id})">{{referee.id}}</a></td>
+                    <td>{{referee.name}}</td>
+                        <td>{{referee.birthDate | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="league.detail({id:referee.league.id})">{{referee.league.name}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="referee.detail({id:referee.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="referee.edit({id:referee.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="referee.delete({id:referee.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

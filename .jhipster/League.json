@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "season",
+            "otherEntityName": "season",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "league"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "referee",
+            "otherEntityName": "referee",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "league"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151126210703",
+    "dto": "no",
+    "pagination": "pagination"
+}

@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myTeamLabel" translate="pruebaApp.team.home.createOrEditLabel">Create or edit a Team</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="team.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.team.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="team.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.team.creationDate" for="field_creationDate">CreationDate</label>
+            <input id="field_creationDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="team.creationDate" is-open="datePickerForCreationDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCreationDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.team.locality" for="field_locality">Locality</label>
+            <input type="text" class="form-control" name="locality" id="field_locality"
+                    ng-model="team.locality"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="pruebaApp.team.stadium" for="field_stadium">stadium</label>
+            <select class="form-control" id="field_stadium" name="stadium" ng-model="team.stadium" ng-options="stadium as stadium.name for stadium in stadiums | orderBy:'id' track by stadium.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pruebaApp.team.coach" for="field_coach">coach</label>
+            <select class="form-control" id="field_coach" name="coach" ng-model="team.coach" ng-options="coach as coach.name for coach in coachs | orderBy:'id' track by coach.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pruebaApp.team.partner" for="field_partner">partner</label>
+            <select class="form-control" id="field_partner" multiple name="partner" ng-model="team.partners" ng-options="partner as partner.name for partner in partners track by partner.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

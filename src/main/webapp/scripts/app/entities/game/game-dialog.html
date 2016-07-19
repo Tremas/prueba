@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myGameLabel" translate="pruebaApp.game.home.createOrEditLabel">Create or edit a Game</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="game.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.game.date" for="field_date">Date</label>
+            <input id="field_date" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="game.date" is-open="datePickerForDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.game.localResult" for="field_localResult">LocalResult</label>
+            <input type="number" class="form-control" name="localResult" id="field_localResult"
+                    ng-model="game.localResult"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.game.awayResult" for="field_awayResult">AwayResult</label>
+            <input type="number" class="form-control" name="awayResult" id="field_awayResult"
+                    ng-model="game.awayResult"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="pruebaApp.game.season" for="field_season">season</label>
+            <select class="form-control" id="field_season" name="season" ng-model="game.season" ng-options="season as season.year for season in seasons track by season.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pruebaApp.game.referee" for="field_referee">referee</label>
+            <select class="form-control" id="field_referee" name="referee" ng-model="game.referee" ng-options="referee as referee.name for referee in referees track by referee.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pruebaApp.game.localTeam" for="field_localTeam">localTeam</label>
+            <select class="form-control" id="field_localTeam" name="localTeam" ng-model="game.localTeam" ng-options="team as team.name for team in teams track by team.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pruebaApp.game.awayTeam" for="field_awayTeam">awayTeam</label>
+            <select class="form-control" id="field_awayTeam" name="awayTeam" ng-model="game.awayTeam" ng-options="team as team.name for team in teams track by team.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

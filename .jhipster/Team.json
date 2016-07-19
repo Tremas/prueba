@@ -1,0 +1,82 @@
+{
+    "relationships": [
+
+        {
+            "relationshipId": 1,
+            "relationshipName": "player",
+            "otherEntityName": "player",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "team"
+        },
+
+        {
+            "relationshipId": 2,
+            "relationshipName": "stadium",
+            "otherEntityName": "stadium",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "team"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "coach",
+            "otherEntityName": "coach",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "team"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "partner",
+            "otherEntityName": "partner",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "season",
+            "otherEntityName": "season",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "team"
+        },
+        {
+            "relationshipId": 6,
+            "relationshipName": "localGame",
+            "otherEntityName": "game",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "localTeam"
+        },
+        {
+            "relationshipId": 7,
+            "relationshipName": "awayGame",
+            "otherEntityName": "game",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "awayTeam"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "locality",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151129122700",
+    "dto": "no",
+    "pagination": "pagination"
+}

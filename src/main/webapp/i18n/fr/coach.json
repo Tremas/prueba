@@ -1,0 +1,24 @@
+{
+    "pruebaApp": {
+        "coach" : {
+            "home": {
+                "title": "Coachs",
+                "createLabel": "Créer un nouveau Coach",
+                "createOrEditLabel": "Créer ou éditer un Coach"
+            },
+            "created": "Un nouveau Coach a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Coach avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Coach avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Coach {{ id }} ?"
+            },
+            "detail": {
+                "title": "Coach"
+            },
+            "name": "Name",
+            "birthDate": "BirthDate",
+            "team": "Team"
+        }
+    }
+}
+

@@ -1,0 +1,59 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "season",
+            "otherEntityName": "season",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "year"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "referee",
+            "otherEntityName": "referee",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "localTeam",
+            "otherEntityName": "team",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "awayTeam",
+            "otherEntityName": "team",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "stadistics",
+            "otherEntityName": "stadistics",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "game"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "localResult",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "awayResult",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151126211702",
+    "dto": "no",
+    "pagination": "pagination"
+}

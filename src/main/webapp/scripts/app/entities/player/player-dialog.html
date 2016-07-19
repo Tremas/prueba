@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPlayerLabel" translate="pruebaApp.player.home.createOrEditLabel">Create or edit a Player</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="player.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="player.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.birthDate" for="field_birthDate">BirthDate</label>
+            <input id="field_birthDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="player.birthDate" is-open="datePickerForBirthDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForBirthDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.totalBaskets" for="field_totalBaskets">TotalBaskets</label>
+            <input type="number" class="form-control" name="totalBaskets" id="field_totalBaskets"
+                    ng-model="player.totalBaskets"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.totalAssists" for="field_totalAssists">TotalAssists</label>
+            <input type="number" class="form-control" name="totalAssists" id="field_totalAssists"
+                    ng-model="player.totalAssists"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.totalRebounds" for="field_totalRebounds">TotalRebounds</label>
+            <input type="number" class="form-control" name="totalRebounds" id="field_totalRebounds"
+                    ng-model="player.totalRebounds"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pruebaApp.player.fieldPosition" for="field_fieldPosition">FieldPosition</label>
+            <input type="text" class="form-control" name="fieldPosition" id="field_fieldPosition"
+                    ng-model="player.fieldPosition"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="pruebaApp.player.team" for="field_team">team</label>
+            <select class="form-control" id="field_team" name="team" ng-model="player.team" ng-options="team as team.name for team in teams track by team.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

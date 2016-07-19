@@ -1,0 +1,33 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "game",
+            "otherEntityName": "game",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "date"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "player",
+            "otherEntityName": "player",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "baskets",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "faults",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151127112712",
+    "dto": "no",
+    "pagination": "pagination"
+}

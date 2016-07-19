@@ -1,0 +1,36 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "team",
+            "otherEntityName": "team",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "league",
+            "otherEntityName": "league",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "game",
+            "otherEntityName": "game",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "season"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "year",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151126211428",
+    "dto": "no",
+    "pagination": "pagination"
+}

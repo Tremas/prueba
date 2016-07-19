@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Team.
+    -->
+    <changeSet id="20151129122700" author="jhipster">
+        <createTable tableName="team">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="creation_date" type="date"/>
+            <column name="locality" type="varchar(255)"/>
+            <column name="stadium_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="coach_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="stadium_id"
+                                 baseTableName="team"
+                                 constraintName="fk_team_stadium_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stadium"/>
+
+        <addForeignKeyConstraint baseColumnNames="coach_id"
+                                 baseTableName="team"
+                                 constraintName="fk_team_coach_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="coach"/>
+
+        <createTable tableName="team_partner">
+            <column name="partners_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="teams_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="teams_id, partners_id" tableName="team_partner"/>
+
+        <addForeignKeyConstraint baseColumnNames="teams_id"
+                                 baseTableName="team_partner"
+                                 constraintName="fk_team_partner_partner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="team"/>
+
+        <addForeignKeyConstraint baseColumnNames="partners_id"
+                                 baseTableName="team_partner"
+                                 constraintName="fk_team_partner_team_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="partner"/>
+        
+    </changeSet>
+</databaseChangeLog>

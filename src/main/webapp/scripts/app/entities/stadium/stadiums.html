@@ -1,0 +1,55 @@
+<div>
+    <h2 translate="pruebaApp.stadium.home.title">Stadiums</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="stadium.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="pruebaApp.stadium.home.createLabel">Create a new Stadium</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="pruebaApp.stadium.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="measure"><span translate="pruebaApp.stadium.measure">Measure</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="maximumCapacity"><span translate="pruebaApp.stadium.maximumCapacity">MaximumCapacity</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stadium in stadiums track by stadium.id">
+                    <td><a ui-sref="stadium.detail({id:stadium.id})">{{stadium.id}}</a></td>
+                    <td>{{stadium.name}}</td>
+                    <td>{{stadium.measure}}</td>
+                    <td>{{stadium.maximumCapacity}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="stadium.detail({id:stadium.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="stadium.edit({id:stadium.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="stadium.delete({id:stadium.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

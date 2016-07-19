@@ -1,0 +1,25 @@
+{
+    "pruebaApp": {
+        "referee" : {
+            "home": {
+                "title": "Referees",
+                "createLabel": "Créer un nouveau Referee",
+                "createOrEditLabel": "Créer ou éditer un Referee"
+            },
+            "created": "Un nouveau Referee a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Referee avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Referee avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Referee {{ id }} ?"
+            },
+            "detail": {
+                "title": "Referee"
+            },
+            "name": "Name",
+            "birthDate": "BirthDate",
+            "league": "League",
+            "game": "Game"
+        }
+    }
+}
+
